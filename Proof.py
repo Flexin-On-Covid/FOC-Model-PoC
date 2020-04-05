@@ -153,17 +153,19 @@ else:
                     print('need still present')
 
                 elif len(Needed_Staff) > 0:
-                    #print("Required Staff", Needed_List)
                     Needed_Staff.remove(Needed_Staff[index])
                     row_index -= 1
 
         staff_type += 1
 
-    if (len(potential_pull) > 0) == False:
-        print("not possible")
-        print("Required Staff-----", Needed_List)
-        print("Extra Staff------", Extra_List)
+    if len(potential_pull) == 0:
+        print("A partial reassignment will allieviate some strain on the system. Additional staff will need to be hired.")
+        print("The positions that are unable to be covered by reassignment are:")
+        print(Needed_List)
+        print("The positions that will have excess staff are:")
+        print(Extra_List)
     else:
         a = 1
-        print("Required Staff-----", Needed_List)
-        print("Extra Staff------", Extra_List)
+        print("It is possible to cover all open positions via reassignment")
+        print("The positions that will have excess staff are:")
+        print(Extra_List)
